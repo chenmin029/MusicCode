@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			/* html,body{
+				height:100%
+			} */
+			.box{
+				width: 900px;
+				height: 700px;
+				/* border: 1px solid red; */
+				margin: 0 auto;
+				
+				position: relative;
+			}
+			.cover{
+				width: 100%;
+				height: 100%;
+				
+				background-color: #000000;
+				opacity: 0.6;
+				
+				position: absolute;
+				left: 0;
+				right: 0;
+				
+				z-index: 10;
+				
+				display: none;
+			}
+			.comments{
+				width: 100%;
+				height: 200px;
+				background-color: #FFE4C4;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+			}
+			.content{
+				width: 100%;
+				height: 500px;
+				background-color: gainsboro;
+				margin-top: 50px;
+				
+				position: relative;
+			}
+			.top{
+				width: 100%;
+				height: 40px;
+				line-height: 40px;
+				
+				background-color: red;
+				
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			.top span{
+				color: white;
+				font-family: '微软雅黑';
+				font-size: 14px;
+				
+				margin: 0 30px;
+			}
+			#search{
+				width: 200px;
+				border-radius: 5px;
+				margin-right: 200px;
+			}
+			.bottom{
+				width: 100%;
+				height: 40px;
+				line-height: 40px;
+				background-color: red;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+			}
+			.bottom span{
+				color: white;
+				font-family: '微软雅黑';
+				font-size: 14px;
+				
+				margin: 0 15px;
+			}
+			#playProgress{
+				width: 300px;
+			}
+			#begintime,#endtime{
+				display: inline-block;
+				width: 30px;
+			}
+			.left,.right{
+				width: 50%;
+				height: 500px;
+				/* background-color: #7FFF00; */
+				
+				float: left;
+			}
+			/* .right{
+				background-color: #0000FF;
+			} */
+			.plate{
+				width: 100%;
+				height: 250px;
+				/* line-height: 300px; */
+				/* background-color: #7FFF00; */
+			}
+			.bigArc{
+				width: 200px;
+				height: 200px;
+				background-color: black; 
+				margin: 80px auto;
+				
+				border-radius: 50%;
+				
+				animation: move 20s linear infinite;
+			}
+			@keyframes move{
+				from{transform: rotate(0);}
+				to{transform: rotate(360deg);}
+			}
+			.stop{
+				animation-play-state:paused;
+			}
+			.bigArc img{
+				width: 100px;
+				height: 100px;
+				margin: 50px 50px;
+				
+				border-radius: 50%;
+			}
+			.favorite{
+				width: 100%;
+				height: 250px;
+			}
+			.favorite span{
+				font-size: 18px;
+				
+				margin: 0 26px;
+			}
+			.song{
+				width: 90%;
+				height: 70px;
+				margin-top: 50px;
+				background-color: #008000;
+			}
+			.song p{
+				width: 100%;
+				height: 20px;
+				
+				text-align: center;
+				padding: 10px;
+				
+				font-family: '微软雅黑';
+				font-size: 20px;
+				font-weight: bold;
+			}
+			.song span{
+				margin: 0 20px;
+				color: white;
+				font-family: '微软雅黑';
+				font-size: 14px;
+			}
+			.lyric{
+				width: 90%;
+				height: 350px;
+				
+				background-color: white;
+				
+				overflow: scroll;
+			}
+			.lyric ul{
+				width: 100%;
+				height: 100%;
+				
+				list-style: none;
+			}
+			.lyric ul li{
+				text-align: center;
+				height: 30px;
+				line-height: 30px;
+			}
+			.login{
+				width: 300px;
+				height: 170px;
+				background-color: #0066CC;
+				position: absolute;
+				left: 300px;
+				top: 100px;
+				
+				z-index: 20;
+				
+				display: none;
+			}
+			.table thead{
+				width: 100%;
+				height: 100px;
+				line-height: 200px;
+			}
+			.table thead tr{
+				width: 100%;
+				height: 30px;
+				line-height: 30px;
+			}
+			.table thead tr th{
+				width: 100px;
+				height: 30px;
+				line-height: 30px;
+				
+				font-family: '微软雅黑';
+				font-size: 14px;
+				
+				text-align: right;
+			}
+			.close{
+				width: 100%;
+				height: 10px;
+				text-align: right;
+			}
+			
+			.loginSubmit{
+				width: 100%;
+				height: 30px;
+				margin: 20px auto;
+				text-align: center;
+			}
+			#submit{
+				width: 100px;
+				height: 30px;
+				background-color: #008000;
+				
+				color: white;
+				
+				border-radius: 5px;
+			}
+			.remember{
+				width: 100%;
+				height: 20px;
+				text-align: left;
+			}
+			#remmberPwd{
+				margin-left: 100px;
+			}
+			.playInfo{
+				width: 50%;
+				height: 400px;
+				
+				position: absolute;
+				left: 200px;
+				top: 50px;
+				
+				background-color: #FFE4C4;
+				
+				z-index: 30;
+				display: none;
+			}
+			.title,.playHistory,.playing{
+				text-align: left;
+			}
+			.playInfo span{
+				margin: 0 20px;
+				
+				font-family: '微软雅黑';
+				font-size: 16px;
+			}
+			.playing,.playHistory{
+				width: 90%;
+				height: 300px;
+				background-color: white;
+				margin: 0 auto;
+				margin-top: 20px;
+				
+			}
+			.playHistory{
+				background-color: #0044DD;
+				display: none;
+			}
+			.playing{
+				/* display: none; */
+				background-color: #008000;
+			}
+			.playing ul li{
+				height: 30px;
+				line-height: 30px;
+			}
+			.playInfoclose{
+				text-align: right;
+			}
+			.colorbl{
+				text-decoration: underline;
+				color: #0000FF;
+			}
+			.red{
+				color: red;
+			}
+			.bk{
+				background-color: #00FFFF;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="cover">
+			</div>
+			<audio src="" >
+				当前浏览器不支持audio
+			</audio>
+			<div class="content">
+				<div class="top">
+					<span class="discribe">网易云音乐</span>
+					<input type="search" placeholder="搜索音乐" name="" id="search" value="" />
+					<span class="icon iconfont icon-denglu" style="cursor: pointer;">登录 </span>
+					<span id="loginUsr"></span>
+					<span class="icon iconfont icon-pifu">皮肤</span>
+					<input id="mycolor" style="cursor: pointer;" type="color" name="mycolor" />
+				</div>
+				<div class="articel">
+					<div class="left">
+						<div class="plate">
+							<div class="bigArc">
+								<img src="imgs/gd.png" >
+							</div>
+						</div>
+						<div class="favorite">
+							<span class="icon iconfont icon-xihuan">喜欢</span>
+							<span class="icon iconfont icon-shoucang">收藏</span>
+							<span class="icon iconfont icon-download">下载</span>
+							<span class="icon iconfont icon-fenxiang">分享</span>
+						</div>
+					</div>
+					<div class="right">
+						<div class="song">
+							<p></p>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<div class="lyric">
+							<ul>
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="bottom">
+					<span id="prevSong" class="icon iconfont icon-shangxiazuoyouTriangle14" style="cursor: pointer;"></span>
+					<span id="playAndpause" class="icon iconfont icon-bofang1" style="cursor: pointer;"></span>
+					<span id="nextSong" class="icon iconfont icon-shangxiazuoyouTriangle12" style="cursor: pointer;"></span>
+					<span id="begintime">0:00</span>				
+					<input id="playProgress" type="range" min="0" max='200' value='0' style="cursor: pointer;">
+					<span id = "endtime">0:00</span>
+					<span id="volOrnot" class="icon iconfont icon-bofang" style="cursor: pointer;"></span>
+					<input id="rangInputVol" type="range" min="0" max='1' step='0.05' value='0' style="cursor: pointer;">
+					<span id="playModelCtrl" class="icon iconfont icon-liebiaomoshi" style="cursor: pointer;">2</span>
+					<span class="icon iconfont icon-liebiao" style="cursor: pointer;"></span>
+				</div>
+			</div>
+			<div class="comments">
+				<ul>
+					<li>
+						
+					</li>
+				</ul>
+			</div>
+			<div class="login">
+				<div class="close">
+					<span id='loginClose'>X</span
+				</div>
+				<table class="table" border="0" cellspacing="0" cellpadding="0">
+					<thead>
+						<tr>
+							<th>用户名：</th>
+							<th><input type="text" name="username" id="username" value="" placeholder="请输入用户名"/></th>
+						</tr>
+						<tr>
+							<th>密码：</th>
+							<th><input type="password" name="password" id="password" value="" placeholder="请输入密码"/></th>
+						</tr>
+					</thead>
+				</table>
+				<div class="remember">
+					<input type="checkbox" id="remmberPwd">记住密码
+				</div>
+				<div class="loginSubmit">
+					<input type="button" name="submit" id="submit" value="登录" />
+				</div>
+			</div>
+			
+		</div>
+		<div class="playInfo">
+			<div class="playInfoclose">
+				<span id="closePlayInfo">X</span
+			</div>
+			<div class="title">
+				<span id="playlist" class="colorbl">播放列表</span>
+				<span id="playhis">播放历史</span>
+			</div>
+			<div class="playing">
+				<ul>
+					
+				</ul>
+			</div>
+			<div class="playHistory">
+				<ul>
+					
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="../js/data.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery3.5.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="index.js" type="module" charset="utf-8"></script>
